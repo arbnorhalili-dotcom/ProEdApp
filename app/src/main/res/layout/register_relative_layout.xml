@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:hint="Name"
+        android:inputType="textCapWords"
+        android:imeOptions="actionNext"
+        android:id="@+id/etName"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:hint="Address"
+        android:inputType="textCapWords"
+        android:imeOptions="actionNext"
+        android:id="@+id/etAddress"
+        android:layout_below="@id/etName"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:hint="Email"
+        android:inputType="textCapWords"
+        android:imeOptions="actionNext"
+        android:id="@+id/etEmail"
+        android:layout_below="@id/etAddress"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:hint="Password"
+        android:inputType="textCapWords"
+        android:imeOptions="actionDone"
+        android:id="@+id/etPassword"
+        android:layout_below="@id/etEmail"></EditText>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Register"
+        android:layout_below="@id/etPassword"
+        android:layout_alignParentRight="true"
+        android:id="@+id/btnRegister"></Button>
+
+</RelativeLayout>
