@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ProEdApp</string>
-    <string name="tv_username">Username</string>
-    <string name="tv_password">Password</string>
+    <string name="tv_username">Benutzer</string>
+    <string name="tv_password">Passwort</string>
     <string name="btn_register">Register</string>
     <string name="btn_login">Login</string>
     <string name="label_not_implemented">NOT IMPLEMENTED</string>

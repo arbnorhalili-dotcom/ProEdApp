@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Username"
+            android:text="@string/tv_username"
             android:layout_below="@id/imgIcon"
             android:id="@+id/tvUsername"></TextView>
         <EditText
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Password"
+            android:text="@string/tv_password"
             android:layout_below="@id/etUsername"
             android:id="@+id/tvPassword"></TextView>
         <EditText
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Login"
+            android:text="@string/btn_login"
             android:layout_below="@id/etPassword"
             android:layout_alignParentRight="true"
             android:id="@+id/btnLogin"></Button>
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Register"
+            android:text="@string/btn_register"
             android:layout_below="@id/etPassword"
             android:layout_alignParentLeft="true"
             android:id="@+id/btnRegister"></Button>
