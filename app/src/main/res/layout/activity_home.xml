@@ -11,6 +11,11 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:id="@+id/tvUsers"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"></TextView>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvUsers"></ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

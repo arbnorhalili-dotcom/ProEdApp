@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Adapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,12 +21,18 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
 
     TextView tvUsers;
+    ListView lvUsers;
+    UserAdapter userAdapter;
+    List<User> tempDataSource = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         tvUsers = findViewById(R.id.tvUsers);
+        lvUsers = findViewById(R.id.lvUsers);
+
+        userAdapter = new UserAdapter(HomeActivity.this);
 
         if(getIntent().hasExtra("Username"))
         {
@@ -36,6 +44,9 @@ public class HomeActivity extends AppCompatActivity {
         {
             tvUsers.setText(tvUsers.getText().toString() + "\n" + users.get(i));
         }
+
+        userAdapter.datasourceUser = getUsersList();
+        lvUsers.setAdapter(userAdapter);
     }
 
     private List<String> getUsers()
@@ -55,6 +66,30 @@ public class HomeActivity extends AppCompatActivity {
         while(cursor.isAfterLast()==false)
         {
             users.add(cursor.getString(0)+" "+cursor.getString(1));
+            cursor.moveToNext();
+        }
+
+        return users;
+    }
+
+    private List<User> getUsersList()
+    {
+        List<User> users = new ArrayList<>();
+
+        SQLiteDatabase objDb = (new DatabaseHelper(HomeActivity.this)).getReadableDatabase();
+        Cursor cursor = objDb.query("Users",
+                new String[]{"Id","Name", "Surname", "Position"},
+                "",
+                new String[]{},
+                "",
+                "",
+                "");
+
+        cursor.moveToFirst();
+        while(cursor.isAfterLast()==false)
+        {
+            User tempUser = new User(cursor.getInt(0),cursor.getString(1),cursor.getString(2), cursor.getString(3));
+            users.add(tempUser);
             cursor.moveToNext();
         }
 
